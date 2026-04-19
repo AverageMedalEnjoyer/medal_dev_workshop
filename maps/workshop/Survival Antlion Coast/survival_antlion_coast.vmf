@@ -1,8 +1,8 @@
 versioninfo
 {
 	"editorversion" "400"
-	"editorbuild" "8870"
-	"mapversion" "202"
+	"editorbuild" "8871"
+	"mapversion" "212"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -119,7 +119,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "202"
+	"mapversion" "212"
 	"classname" "worldspawn"
 	"chaptertitlenomessage" "1"
 	"detailmaterial" "detail/detailsprites"
@@ -24729,7 +24729,7 @@ entity
 	"origin" "-396 696 376"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1500 2500]"
@@ -24751,7 +24751,7 @@ entity
 	"origin" "604 684 376"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1500 3000]"
@@ -24781,7 +24781,7 @@ entity
 	"origin" "-680 1024 422.028"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1500 4000]"
@@ -24882,23 +24882,14 @@ entity
 entity
 {
 	"id" "7152"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "73"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1724 -1864 -33.5359"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -24907,25 +24898,24 @@ entity
 entity
 {
 	"id" "7182"
-	"classname" "npc_antlion_template_maker"
+	"classname" "npc_template_maker"
 	"angles" "0 0 0"
-	"createspores" "0"
-	"ignorebugbait" "0"
-	"MaxLiveChildren" "0"
+	"criteriondistance" "2"
+	"criterionvisibility" "2"
+	"destinationgroup" "burrow_1_spawns"
+	"MaxLiveChildren" "9999"
 	"maxnpccount" "0"
-	"pool_max" "9999"
-	"pool_regen_amount" "0"
-	"pool_regen_time" "0"
-	"pool_start" "0"
+	"minspawndistance" "0"
+	"radius" "256"
 	"spawnflags" "80"
 	"SpawnFrequency" "1"
-	"spawngroup" "burrow_1_spawns"
-	"spawnradius" "3000"
 	"StartDisabled" "1"
 	"targetname" "burrow_1_spawner"
 	"TemplateName" "antlion_template_burrow1"
-	"vehicledistance" "1"
-	"workerspawnrate" "0"
+	connections
+	{
+		"OnSpawnNPC" "!activatorUnburrow0-1"
+	}
 	"origin" "1720 -1856 48"
 	editor
 	{
@@ -25026,7 +25016,7 @@ entity
 	"origin" "-984 544 328"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -2268]"
@@ -27178,7 +27168,7 @@ entity
 	"origin" "-1070 472 350.576"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 7500]"
@@ -27217,23 +27207,14 @@ entity
 entity
 {
 	"id" "8324"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_2_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "84"
-	"spawnflags" "0"
-	"targetname" "burrow_2_spawn_node"
-	"TargetNode" "-1"
-	"origin" "-1888 -2038 -4"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1896 -2036 -4"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -27296,10 +27277,11 @@ entity
 		"OnPressed" "!selfLock3-1"
 		"OnPressed" "combat_music_random_relayTrigger0-1"
 		"OnPressed" "countdown_voicelines_relayTrigger0-1"
-		"OnPressed" "other_voicelinesPlaySound170-1"
+		"OnPressed" "combat_music_casePickRandomShuffle0-1"
 		"OnPressed" "hint_initial2EndHint0-1"
 		"OnPressed" "generator_bullseye0-1"
 		"OnPressed" "engine_soundPlaySound0-1"
+		"OnPressed" "combat_musicStopAllSounds0-1"
 	}
 	solid
 	{
@@ -27668,7 +27650,7 @@ entity
 	"origin" "-1040 472 416"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 7500]"
@@ -27885,7 +27867,7 @@ entity
 	"origin" "-1010 472 350.576"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 7500]"
@@ -27963,7 +27945,7 @@ entity
 	"origin" "-588 1400 496"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -9768]"
@@ -27981,7 +27963,7 @@ entity
 	"origin" "-260 1404 496"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -9768]"
@@ -27999,7 +27981,7 @@ entity
 	"origin" "42 1406 496"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -9768]"
@@ -28017,7 +27999,7 @@ entity
 	"origin" "330 1402 496"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -9768]"
@@ -28035,7 +28017,7 @@ entity
 	"origin" "658 1406 496"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -9768]"
@@ -28053,7 +28035,7 @@ entity
 	"origin" "1002 1404 496"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -9768]"
@@ -28071,7 +28053,7 @@ entity
 	"origin" "1254 1410 496"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -9768]"
@@ -28271,7 +28253,7 @@ entity
 	"origin" "-1066 514 311.028"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[3500 3500]"
@@ -28296,7 +28278,7 @@ entity
 	"origin" "-1020 514 311.028"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[3500 3500]"
@@ -28314,7 +28296,7 @@ entity
 	"origin" "-588 1001 459.001"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2500]"
@@ -29212,7 +29194,7 @@ entity
 	"origin" "-1070 503 380"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 7500]"
@@ -29430,31 +29412,6 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1500 5500]"
-	}
-}
-entity
-{
-	"id" "14045"
-	"classname" "info_node_hint"
-	"angles" "0 0 0"
-	"Group" "burrow_2_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "85"
-	"spawnflags" "0"
-	"targetname" "burrow_2_spawn_node"
-	"TargetNode" "-1"
-	"origin" "-1932 -2038 0"
-	editor
-	{
-		"color" "232 219 8"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[2000 12000]"
 	}
 }
 entity
@@ -29969,6 +29926,13 @@ entity
 	"classname" "item_battery"
 	"angles" "0 0 0"
 	"fademindist" "-1"
+	"fadescale" "1"
+	"model" "models/items/battery.mdl"
+	"modelscale" "1.0"
+	"PowerMultiplier" "1.0"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"solid" "6"
 	"StartDisabled" "0"
 	"targetname" "buyable_battery"
 	"origin" "-16 502 320.281"
@@ -30008,7 +29972,7 @@ entity
 	"origin" "-56 520 364.359"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 13000]"
@@ -30229,7 +30193,7 @@ entity
 	"origin" "63.0519 628 373.774"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 13000]"
@@ -30252,7 +30216,7 @@ entity
 	"origin" "52 594 394.347"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 15500]"
@@ -30901,7 +30865,7 @@ entity
 	"origin" "658 154 372.133"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -15268]"
@@ -30936,7 +30900,7 @@ entity
 	"origin" "628.299 162 367.143"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 13000]"
@@ -31139,7 +31103,7 @@ entity
 	"origin" "-214 518 364.359"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 13000]"
@@ -31190,7 +31154,7 @@ entity
 	"origin" "-172 502 324"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 200 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 8500]"
@@ -31294,7 +31258,7 @@ entity
 	"origin" "-1046 509 422"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -11768]"
@@ -31312,7 +31276,7 @@ entity
 	"origin" "-312 656 422"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "255 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 -11768]"
@@ -31354,7 +31318,7 @@ entity
 	"origin" "880 1196 443.041"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -7268]"
@@ -31383,7 +31347,7 @@ hidden
 		"origin" "860 1198 440.758"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "200 0 0"
 			"visgroupid" "73"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -31411,7 +31375,7 @@ entity
 	"origin" "-1536 5312 -64"
 	editor
 	{
-		"color" "0 0 255"
+		"color" "173 223 245"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -3768]"
@@ -31428,7 +31392,7 @@ entity
 	"origin" "568.97 667.941 374.038"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -3268]"
@@ -31451,7 +31415,7 @@ entity
 	"origin" "591.325 672.482 393.995"
 	editor
 	{
-		"color" "255 0 0"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -2768]"
@@ -32247,7 +32211,7 @@ entity
 	"origin" "-498 514 364.359"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 13000]"
@@ -32416,7 +32380,7 @@ entity
 	"origin" "-1042 472 350.576"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 7500]"
@@ -32433,7 +32397,7 @@ entity
 	"origin" "-1042 472 368"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 7500]"
@@ -32582,7 +32546,7 @@ entity
 	"origin" "867 805 360"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1500 3000]"
@@ -32895,7 +32859,7 @@ entity
 	"origin" "-1070 532 380"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 7500]"
@@ -40486,7 +40450,7 @@ entity
 	"origin" "-2107.5 850.151 100"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 500]"
@@ -40495,23 +40459,14 @@ entity
 entity
 {
 	"id" "27728"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_3_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "625"
-	"spawnflags" "0"
-	"targetname" "burrow_3_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
 	"origin" "-2105 1025.63 10"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -40520,28 +40475,23 @@ entity
 entity
 {
 	"id" "29648"
-	"classname" "npc_antlion_template_maker"
+	"classname" "npc_template_maker"
 	"angles" "0 0 0"
-	"createspores" "0"
-	"ignorebugbait" "0"
-	"MaxLiveChildren" "0"
+	"criteriondistance" "2"
+	"criterionvisibility" "2"
+	"destinationgroup" "burrow_1_spawns"
+	"MaxLiveChildren" "9999"
 	"MaxNPCCount" "0"
-	"pool_max" "9999"
-	"pool_regen_amount" "0"
-	"pool_regen_time" "0"
-	"pool_start" "0"
+	"minspawndistance" "0"
+	"radius" "256"
 	"spawnflags" "80"
 	"SpawnFrequency" "1"
-	"spawngroup" "burrow_1_spawns"
-	"spawnradius" "3000"
 	"StartDisabled" "1"
 	"targetname" "burrow_worker_1_spawner"
 	"TemplateName" "antlionworker_template_burrow1"
-	"vehicledistance" "1"
-	"workerspawnrate" "0"
 	connections
 	{
-		"" "0-1"
+		"OnSpawnNPC" "!activatorUnburrow0-1"
 	}
 	"origin" "1720 -1856 72"
 	editor
@@ -40579,6 +40529,7 @@ entity
 		"OnDeath" "currencymanagerGiveCurrencyToAll100-1"
 		"OnUnBurrowed" "!selfFightToPositiongenerator_bullseye0-1"
 		"OnDeath" "current_antlions_counterSubtract10-1"
+		"OnWake" "0-1"
 	}
 	"origin" "1648 -1704 144"
 	editor
@@ -41075,25 +41026,24 @@ entity
 entity
 {
 	"id" "31716"
-	"classname" "npc_antlion_template_maker"
+	"classname" "npc_template_maker"
 	"angles" "0 0 0"
-	"createspores" "0"
-	"ignorebugbait" "0"
-	"MaxLiveChildren" "3"
+	"criteriondistance" "2"
+	"criterionvisibility" "2"
+	"destinationgroup" "burrow_2_spawns"
+	"MaxLiveChildren" "9999"
 	"MaxNPCCount" "0"
-	"pool_max" "9999"
-	"pool_regen_amount" "0"
-	"pool_regen_time" "0"
-	"pool_start" "0"
+	"minspawndistance" "0"
+	"radius" "256"
 	"spawnflags" "80"
 	"SpawnFrequency" "1"
-	"spawngroup" "burrow_2_spawns"
-	"spawnradius" "3000"
 	"StartDisabled" "1"
 	"targetname" "burrow_2_spawner"
 	"TemplateName" "antlion_template_burrow2"
-	"vehicledistance" "1"
-	"workerspawnrate" "0"
+	connections
+	{
+		"OnSpawnNPC" "!activatorUnburrow0-1"
+	}
 	"origin" "-1896 -2040 48"
 	editor
 	{
@@ -41106,25 +41056,24 @@ entity
 entity
 {
 	"id" "31720"
-	"classname" "npc_antlion_template_maker"
+	"classname" "npc_template_maker"
 	"angles" "0 0 0"
-	"createspores" "0"
-	"ignorebugbait" "0"
-	"MaxLiveChildren" "3"
+	"criteriondistance" "2"
+	"criterionvisibility" "2"
+	"destinationgroup" "burrow_2_spawns"
+	"MaxLiveChildren" "9999"
 	"MaxNPCCount" "0"
-	"pool_max" "9999"
-	"pool_regen_amount" "0"
-	"pool_regen_time" "0"
-	"pool_start" "0"
+	"minspawndistance" "0"
+	"radius" "256"
 	"spawnflags" "80"
 	"SpawnFrequency" "1"
-	"spawngroup" "burrow_2_spawns"
-	"spawnradius" "3000"
 	"StartDisabled" "1"
 	"targetname" "burrow_worker_2_spawner"
 	"TemplateName" "antlionworker_template_burrow2"
-	"vehicledistance" "1"
-	"workerspawnrate" "0"
+	connections
+	{
+		"OnSpawnNPC" "!activatorUnburrow0-1"
+	}
 	"origin" "-1896 -2040 72"
 	editor
 	{
@@ -41211,25 +41160,24 @@ entity
 entity
 {
 	"id" "32149"
-	"classname" "npc_antlion_template_maker"
+	"classname" "npc_template_maker"
 	"angles" "0 0 0"
-	"createspores" "0"
-	"ignorebugbait" "0"
-	"MaxLiveChildren" "3"
+	"criteriondistance" "2"
+	"criterionvisibility" "2"
+	"destinationgroup" "burrow_3_spawns"
+	"MaxLiveChildren" "9999"
 	"MaxNPCCount" "0"
-	"pool_max" "9999"
-	"pool_regen_amount" "0"
-	"pool_regen_time" "0"
-	"pool_start" "0"
+	"minspawndistance" "0"
+	"radius" "256"
 	"spawnflags" "80"
 	"SpawnFrequency" "1"
-	"spawngroup" "burrow_3_spawns"
-	"spawnradius" "300"
 	"StartDisabled" "1"
 	"targetname" "burrow_3_spawner"
 	"TemplateName" "antlion_template_burrow3"
-	"vehicledistance" "1"
-	"workerspawnrate" "0"
+	connections
+	{
+		"OnSpawnNPC" "!activatorUnburrow0-1"
+	}
 	"origin" "-2102 1033 48"
 	editor
 	{
@@ -41242,25 +41190,24 @@ entity
 entity
 {
 	"id" "32153"
-	"classname" "npc_antlion_template_maker"
+	"classname" "npc_template_maker"
 	"angles" "0 0 0"
-	"createspores" "0"
-	"ignorebugbait" "0"
-	"MaxLiveChildren" "3"
+	"criteriondistance" "2"
+	"criterionvisibility" "2"
+	"destinationgroup" "burrow_3_spawns"
+	"MaxLiveChildren" "9999"
 	"MaxNPCCount" "0"
-	"pool_max" "9999"
-	"pool_regen_amount" "0"
-	"pool_regen_time" "0"
-	"pool_start" "0"
+	"minspawndistance" "0"
+	"radius" "256"
 	"spawnflags" "80"
 	"SpawnFrequency" "1"
-	"spawngroup" "burrow_3_spawns"
-	"spawnradius" "300"
 	"StartDisabled" "1"
 	"targetname" "burrow_worker_3_spawner"
 	"TemplateName" "antlionworker_template_burrow3"
-	"vehicledistance" "1"
-	"workerspawnrate" "0"
+	connections
+	{
+		"OnSpawnNPC" "!activatorUnburrow0-1"
+	}
 	"origin" "-2102 1033 72"
 	editor
 	{
@@ -47755,7 +47702,7 @@ entity
 	"origin" "-2640 -768 204"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[7000 14000]"
@@ -47837,7 +47784,7 @@ entity
 	"origin" "-2816 -762.1 132"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "128 128 128"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -2268]"
@@ -48034,7 +47981,7 @@ entity
 	"origin" "-2816 -752 196"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "128 128 128"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -2268]"
@@ -48051,7 +47998,7 @@ entity
 	"origin" "-2816 -816 228"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 255 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[10000 -7768]"
@@ -48885,7 +48832,7 @@ entity
 	"origin" "-2774.28 -803.21 149"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 4000]"
@@ -49677,7 +49624,7 @@ entity
 	"origin" "-2774.28 -771.21 149"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 4000]"
@@ -49709,7 +49656,7 @@ entity
 	"origin" "-2774.28 -771.21 181"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 4000]"
@@ -49887,7 +49834,7 @@ entity
 	"origin" "-2720 -768 164"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[7000 -14768]"
@@ -50106,8 +50053,8 @@ entity
 	connections
 	{
 		"OnTrigger" "current_antlions_counterSetValue300-1"
-		"OnTrigger" "burrow_1_spawnerAddToPool150-1"
-		"OnTrigger" "burrow_2_spawnerAddToPool150-1"
+		"OnTrigger" "burrow_1_spawnerAddMaxChildren150-1"
+		"OnTrigger" "burrow_2_spawnerAddMaxChildren150-1"
 		"OnTrigger" "current_antlions_textDisplay0-1"
 		"OnTrigger" "all_dead_counterSetValue20-1"
 		"OnTrigger" "burrow_1_spawnerEnable0-1"
@@ -50120,7 +50067,7 @@ entity
 	"origin" "264 896 520"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -7268]"
@@ -50132,9 +50079,9 @@ entity
 	"classname" "math_counter"
 	"angles" "0 0 0"
 	"max" "9999"
-	"min" "1"
+	"min" "0"
 	"startdisabled" "0"
-	"startvalue" "100"
+	"startvalue" "5000"
 	"targetname" "current_antlions_counter"
 	connections
 	{
@@ -50142,12 +50089,11 @@ entity
 		"OnHitMin" "burrow_1_spawnerDisable0-1"
 		"OnHitMin" "burrow_2_spawnerDisable0-1"
 		"OnHitMin" "burrow_3_spawnerDisable0-1"
-		"OnHitMin" "!selfSetValue99990-1"
 	}
 	"origin" "264 912 568"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Antlion counter, adds 1 to all_dead_counter."
@@ -50179,7 +50125,7 @@ hidden
 		"origin" "264 896 568"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "200 0 0"
 			"visgroupid" "73"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50203,7 +50149,7 @@ entity
 	"origin" "264 944 600"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Ends the wave."
@@ -50221,7 +50167,7 @@ entity
 	"origin" "872 1224 440"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 14000]"
@@ -50258,7 +50204,7 @@ entity
 	"origin" "800 784 355"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 200 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -15768]"
@@ -50308,7 +50254,7 @@ hidden
 		"origin" "344 1072 328"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50337,7 +50283,7 @@ hidden
 		"origin" "344 1088 328"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50366,7 +50312,7 @@ hidden
 		"origin" "344 1104 328"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50393,7 +50339,7 @@ hidden
 		"origin" "360 1104 328"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50434,7 +50380,7 @@ hidden
 		"origin" "360 1088 328"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50466,7 +50412,7 @@ hidden
 		"origin" "360 1072 328"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50519,7 +50465,7 @@ entity
 	"origin" "360 1160 328"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -13268]"
@@ -50550,7 +50496,7 @@ entity
 	"origin" "360 1144 328"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -13268]"
@@ -50625,7 +50571,7 @@ entity
 	"origin" "344 1192 328"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -13268]"
@@ -50646,7 +50592,7 @@ hidden
 		"origin" "344 1040 328"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50697,7 +50643,7 @@ hidden
 		"origin" "264 896 592"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "200 0 0"
 			"visgroupid" "73"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -50711,9 +50657,9 @@ entity
 	"classname" "math_counter"
 	"angles" "0 0 0"
 	"max" "9999"
-	"min" "1"
+	"min" "0"
 	"startdisabled" "0"
-	"startvalue" "100"
+	"startvalue" "5000"
 	"targetname" "current_antlionworkers_counter"
 	connections
 	{
@@ -50721,12 +50667,11 @@ entity
 		"OnHitMin" "burrow_worker_3_spawnerDisable0-1"
 		"OnHitMin" "burrow_worker_2_spawnerDisable0-1"
 		"OnHitMin" "burrow_worker_1_spawnerDisable0-1"
-		"OnHitMin" "!selfSetValue99990-1"
 	}
 	"origin" "264 912 592"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -7268]"
@@ -50738,19 +50683,18 @@ entity
 	"classname" "math_counter"
 	"angles" "0 0 0"
 	"max" "9999"
-	"min" "1"
+	"min" "0"
 	"startdisabled" "0"
-	"startvalue" "100"
+	"startvalue" "5000"
 	"targetname" "current_antlionguards_counter"
 	connections
 	{
 		"OnHitMin" "all_dead_counterAdd10-1"
-		"OnHitMin" "!selfSetValue99990-1"
 	}
 	"origin" "264 912 616"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -7268]"
@@ -50799,7 +50743,7 @@ hidden
 		"origin" "264 896 616"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "200 0 0"
 			"visgroupid" "73"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -52611,7 +52555,7 @@ entity
 	"origin" "336 936 520"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -7268]"
@@ -52651,7 +52595,6 @@ entity
 	"message11" "vo/announcer_begins_3sec.mp3"
 	"message12" "vo/announcer_begins_2sec.mp3"
 	"message13" "vo/announcer_begins_1sec.mp3"
-	"message17" "music/mvm_start_mid_wave.wav"
 	"message18" "mvm/mvm_tank_end.wav"
 	"message2" "vo/mvm_wave_start11.mp3"
 	"message3" "vo/mvm_wave_start01.mp3"
@@ -52693,7 +52636,7 @@ entity
 	"origin" "344 1232 328"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -13268]"
@@ -52716,7 +52659,7 @@ entity
 	"origin" "344 1248 328"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -13268]"
@@ -52810,7 +52753,7 @@ entity
 	"origin" "264 848 504"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -7268]"
@@ -52819,23 +52762,14 @@ entity
 entity
 {
 	"id" "39500"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "662"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1616.74 -1973.55 32.3122"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -52844,23 +52778,14 @@ entity
 entity
 {
 	"id" "39503"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "663"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1542.23 -1828.41 26.6731"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -52869,23 +52794,14 @@ entity
 entity
 {
 	"id" "39506"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "664"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1699.93 -1729 12.1496"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -52894,23 +52810,14 @@ entity
 entity
 {
 	"id" "39509"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "665"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1876.48 -1729.39 43.8774"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -52919,23 +52826,14 @@ entity
 entity
 {
 	"id" "39512"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "666"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1921.84 -1855.67 20.2929"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -52944,23 +52842,14 @@ entity
 entity
 {
 	"id" "39515"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "667"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1926.8 -1944.86 47.5"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -52969,23 +52858,14 @@ entity
 entity
 {
 	"id" "39518"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "668"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1765.66 -2061.01 39.6879"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -52994,23 +52874,14 @@ entity
 entity
 {
 	"id" "39521"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "669"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1816.46 -1959.92 21.2295"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -53019,23 +52890,14 @@ entity
 entity
 {
 	"id" "39524"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "670"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1692.64 -1952.37 5.52842"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -53044,23 +52906,14 @@ entity
 entity
 {
 	"id" "39527"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "671"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1622.98 -1867.34 -0.0653419"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -53069,23 +52922,14 @@ entity
 entity
 {
 	"id" "39530"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "672"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1827.61 -1857.46 -5.3371"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -53094,23 +52938,14 @@ entity
 entity
 {
 	"id" "39533"
-	"classname" "info_node_hint"
+	"classname" "info_npc_spawn_destination"
 	"angles" "0 0 0"
-	"Group" "burrow_1_spawns"
-	"hinttype" "400"
-	"hintweight" "1.0"
-	"IgnoreFacing" "2"
-	"MaximumState" "3"
-	"MinimumState" "1"
-	"nodeFOV" "180"
-	"nodeid" "673"
-	"spawnflags" "0"
-	"targetname" "burrow_1_spawn_node"
-	"TargetNode" "-1"
+	"reusedelay" "1"
+	"targetname" "burrow_1_spawns"
 	"origin" "1792.5 -1732.13 20.2925"
 	editor
 	{
-		"color" "232 219 8"
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 12000]"
@@ -55133,7 +54968,7 @@ entity
 	"origin" "344 1264 328"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -13268]"
@@ -55312,7 +55147,7 @@ hidden
 		"origin" "344 1072 360"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -55341,7 +55176,7 @@ hidden
 		"origin" "344 1088 360"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -55370,7 +55205,7 @@ hidden
 		"origin" "344 1104 360"
 		editor
 		{
-			"color" "220 30 220"
+			"color" "0 100 250"
 			"visgroupid" "148"
 			"visgroupshown" "0"
 			"visgroupautoshown" "1"
@@ -55627,7 +55462,7 @@ entity
 	"origin" "-40 -2808 312"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2500]"
@@ -55725,7 +55560,7 @@ entity
 	"origin" "-80 -2840 312"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -13268]"
@@ -55788,7 +55623,7 @@ entity
 	"origin" "-56 -2808 312"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2500]"
@@ -59570,7 +59405,7 @@ entity
 	"origin" "-72 -2808 312"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2500]"
@@ -59765,7 +59600,7 @@ entity
 	"origin" "1424 -2800 552"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 11000]"
@@ -59790,7 +59625,7 @@ entity
 	"origin" "-72 -2776 312"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2500]"
@@ -59817,7 +59652,7 @@ entity
 	"origin" "-120 -2776 312"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2500]"
@@ -59857,8 +59692,8 @@ entity
 	connections
 	{
 		"OnTrigger" "current_antlions_counterSetValue400-1"
-		"OnTrigger" "burrow_1_spawnerAddToPool200-1"
-		"OnTrigger" "burrow_2_spawnerAddToPool200-1"
+		"OnTrigger" "burrow_1_spawnerAddMaxChildren200-1"
+		"OnTrigger" "burrow_2_spawnerAddMaxChildren200-1"
 		"OnTrigger" "current_antlions_textDisplay0-1"
 		"OnTrigger" "all_dead_counterSetValue10-1"
 		"OnTrigger" "burrow_1_spawnerEnable0-1"
@@ -59869,8 +59704,8 @@ entity
 		"OnTrigger" "burrow_worker_1_spawnerSetMaxLiveChildren10-1"
 		"OnTrigger" "burrow_2_spawnerSetMaxLiveChildren40-1"
 		"OnTrigger" "burrow_worker_2_spawnerSetMaxLiveChildren10-1"
-		"OnTrigger" "burrow_worker_1_spawnerAddToPool50-1"
-		"OnTrigger" "burrow_worker_2_spawnerAddToPool50-1"
+		"OnTrigger" "burrow_worker_1_spawnerAddMaxChildren50-1"
+		"OnTrigger" "burrow_worker_2_spawnerAddMaxChildren50-1"
 		"OnTrigger" "current_antlionworkers_textDisplay0-1"
 		"OnTrigger" "burrow_worker_1_spawnerEnable0-1"
 		"OnTrigger" "burrow_worker_2_spawnerEnable0-1"
@@ -59879,7 +59714,7 @@ entity
 	"origin" "264 912 520"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -7268]"
@@ -60014,7 +59849,7 @@ hidden
 				editor
 				{
 					"color" "220 30 220"
-					"visgroupshown" "0"
+					"visgroupshown" "1"
 					"visgroupautoshown" "1"
 				}
 			}
@@ -60713,7 +60548,7 @@ entity
 	"origin" "1436 -1100 663.242"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 11000]"
@@ -60774,7 +60609,7 @@ entity
 	"origin" "-88 -2776 312"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2500]"
@@ -60794,7 +60629,7 @@ entity
 	"origin" "-136 -2776 312"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "200 0 0"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2500]"
@@ -60811,8 +60646,8 @@ entity
 	connections
 	{
 		"OnTrigger" "current_antlions_counterSetValue600-1"
-		"OnTrigger" "burrow_1_spawnerAddToPool300-1"
-		"OnTrigger" "burrow_2_spawnerAddToPool300-1"
+		"OnTrigger" "burrow_1_spawnerAddMaxChildren300-1"
+		"OnTrigger" "burrow_2_spawnerAddMaxChildren300-1"
 		"OnTrigger" "current_antlions_textDisplay0-1"
 		"OnTrigger" "all_dead_counterSetValue10-1"
 		"OnTrigger" "burrow_1_spawnerEnable0-1"
@@ -60823,8 +60658,8 @@ entity
 		"OnTrigger" "burrow_worker_1_spawnerSetMaxLiveChildren10-1"
 		"OnTrigger" "burrow_2_spawnerSetMaxLiveChildren50-1"
 		"OnTrigger" "burrow_worker_2_spawnerSetMaxLiveChildren10-1"
-		"OnTrigger" "burrow_worker_1_spawnerAddToPool80-1"
-		"OnTrigger" "burrow_worker_2_spawnerAddToPool80-1"
+		"OnTrigger" "burrow_worker_1_spawnerAddMaxChildren80-1"
+		"OnTrigger" "burrow_worker_2_spawnerAddMaxChildren80-1"
 		"OnTrigger" "current_antlionworkers_textDisplay0-1"
 		"OnTrigger" "burrow_worker_1_spawnerEnable0-1"
 		"OnTrigger" "burrow_worker_2_spawnerEnable0-1"
@@ -60833,10 +60668,435 @@ entity
 	"origin" "264 928 520"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "0 100 250"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[1000 -7268]"
+	}
+}
+entity
+{
+	"id" "52608"
+	"classname" "ambient_generic_multiple"
+	"angles" "0 0 0"
+	"health" "10"
+	"message" "ep_song16"
+	"message10" "radhaz_song2"
+	"message11" "radhaz_song5"
+	"message12" "song_hl1_15"
+	"message13" "song4"
+	"message14" "song12_long"
+	"message15" "song14"
+	"message16" "song20_submix0"
+	"message17" "song20_submix4"
+	"message18" "song29"
+	"message2" "ep_song4"
+	"message3" "ep_song6"
+	"message4" "ep_song8"
+	"message5" "ep_song9"
+	"message6" "ep2_song0"
+	"message7" "ep2_song1"
+	"message8" "ep2_song4"
+	"message9" "radhaz_song1"
+	"pitch" "100"
+	"radius" "1250"
+	"soundflags" "0"
+	"spawnflags" "17"
+	"targetname" "combat_music"
+	"origin" "328 1304 328"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 -13268]"
+	}
+}
+entity
+{
+	"id" "52612"
+	"classname" "logic_case"
+	"angles" "0 0 0"
+	"MultipleCasesAllowed" "0"
+	"targetname" "combat_music_case"
+	connections
+	{
+		"OnCase01" "combat_musicPlaySound10-1"
+		"OnCase02" "combat_musicPlaySound20-1"
+		"OnCase03" "combat_musicPlaySound30-1"
+		"OnCase04" "combat_musicPlaySound40-1"
+		"OnCase05" "combat_musicPlaySound50-1"
+		"OnCase06" "combat_musicPlaySound60-1"
+		"OnCase07" "combat_musicPlaySound70-1"
+		"OnCase08" "combat_musicPlaySound80-1"
+		"OnCase09" "combat_musicPlaySound90-1"
+		"OnCase10" "combat_musicPlaySound100-1"
+		"OnCase11" "combat_musicPlaySound110-1"
+		"OnCase12" "combat_musicPlaySound120-1"
+		"OnCase13" "combat_musicPlaySound130-1"
+		"OnCase14" "combat_musicPlaySound140-1"
+		"OnCase15" "combat_musicPlaySound150-1"
+		"OnCase16" "combat_musicPlaySound160-1"
+		"OnCase17" "combat_musicPlaySound170-1"
+		"OnCase18" "combat_musicPlaySound180-1"
+	}
+	"origin" "360 1304 328"
+	editor
+	{
+		"color" "0 100 250"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 -13268]"
+	}
+}
+entity
+{
+	"id" "53049"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
+	"origin" "-2202.71 1000.96 34.3741"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53051"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
+	"origin" "-2104.6 904 44"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53053"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
+	"origin" "-2006.29 1006.73 42.9192"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53057"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
+	"origin" "-2095.38 1129.66 38.5354"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53085"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-2130.32 -2034.05 28.5738"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53093"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1777.22 -1909.36 50.9734"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53095"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1775.59 -2148.43 59.9527"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53097"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-2049.11 -2155.42 44.2869"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53099"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-2011.43 -1894.78 38.244"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53101"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-2023.62 -2042.94 2.61401"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53103"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1921.07 -2125.6 11.216"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53105"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1768.9 -2049.15 18.4502"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53107"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1901.85 -1959.42 7.15981"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53111"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1895.74 -1816.02 38.5461"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53119"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1913.41 -2284 72"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53123"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
+	"origin" "-2248.88 875.295 65.0238"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53125"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
+	"origin" "-1964.91 862.855 68"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53127"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
+	"origin" "-1959.4 1180 67.3465"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53129"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_3_spawns"
+	"origin" "-2249.15 1141.37 60.5464"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53137"
+	"classname" "info_npc_spawn_destination"
+	"angles" "0 0 0"
+	"reusedelay" "1"
+	"targetname" "burrow_2_spawns"
+	"origin" "-1665.5 -2056.26 48.8489"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 12000]"
+	}
+}
+entity
+{
+	"id" "53154"
+	"classname" "info_node"
+	"angles" "0 0 0"
+	"nodeid" "687"
+	"origin" "-1864.67 -1821.89 43.4456"
+	editor
+	{
+		"color" "232 219 8"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[1500 -13268]"
+	}
+}
+entity
+{
+	"id" "53156"
+	"classname" "info_node"
+	"angles" "0 0 0"
+	"nodeid" "688"
+	"origin" "-1685.39 -1960 48"
+	editor
+	{
+		"color" "232 219 8"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[1500 -13268]"
 	}
 }
 cameras

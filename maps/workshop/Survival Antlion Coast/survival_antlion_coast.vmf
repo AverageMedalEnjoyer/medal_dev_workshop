@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8871"
-	"mapversion" "197"
+	"mapversion" "198"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -113,7 +113,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "197"
+	"mapversion" "198"
 	"classname" "worldspawn"
 	"chaptertitlenomessage" "1"
 	"detailmaterial" "detail/detailsprites"
@@ -52540,7 +52540,7 @@ entity
 	"interruptability" "2"
 	"m_flradius" "0"
 	"m_iszentity" "npc_antlion"
-	"schedule" "6"
+	"schedule" "3"
 	"spawnflags" "3076"
 	"targetname" "gofight_schedule"
 	"origin" "328 920 520"
@@ -52563,7 +52563,7 @@ entity
 	"interruptability" "2"
 	"m_flradius" "400"
 	"m_iszentity" "npc_antlion"
-	"schedule" "6"
+	"schedule" "3"
 	"spawnflags" "3076"
 	"targetname" "gofight_gen_schedule"
 	"origin" "344 920 520"
@@ -52611,7 +52611,7 @@ entity
 	"interruptability" "2"
 	"m_flradius" "0"
 	"m_iszentity" "npc_antlionguard"
-	"schedule" "6"
+	"schedule" "3"
 	"spawnflags" "3076"
 	"targetname" "gofight_schedule"
 	"origin" "328 920 536"

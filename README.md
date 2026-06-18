@@ -1,0 +1,1 @@
+The Github repo for Average_Medal_Enjoyer and possibly others' workshop items. This can be custom maps, or items (such as custom weapons and custom playermodels). This is open source so people can freely look into how certain things are implemented, like custom items.

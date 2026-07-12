@@ -736,6 +736,20 @@ $makebackhop	backhop_slam	"valve\HL2DM_Idle_SLAM" 0 soldier_Aim_9_directions ACT
 $makebackhopB	backhop_lose	"valve\male_humans\Jumpup_45" 0 ACT_HL2MP_BACKHOP_LOSERSTATE 1
 $makebackhop	backhop_357		"fyzure/pistol_pose" 0 fyzure_aimlayer_pistol ACT_HL2MP_BACKHOP_357 1  
 
+// PASSTIME WEAPON ANIMATIONS
+$makeidle    idle_passtime    "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_STAND_PASSTIME 1 addlayer idle_tf_layer 
+$makematchrunB    run_passtime "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_RUN_PASSTIME 1
+$makecidleB    cidle_passtime    "fyzure/grenade_pose" 0 "valve\HL2DM_crouch_aim_gravgun" 4 fyzure_aimlayer_grenade ACT_MP_CROUCH_MELEE_ALLCLASS 1 
+$makecwalkB    cwalk_passtime    "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_CROUCHWALK_PASSTIME 1
+$makejump    jump_passtime    "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_JUMP_MELEE_ALLCLASS 1 
+$makejump    airwalk_passtime    "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_AIRWALK_MELEE_ALLCLASS 1 
+$makejump    jump_start_passtime    "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_JUMP_START_MELEE_ALLCLASS 1 
+$makejump    jump_float_passtime    "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_JUMP_FLOAT_MELEE_ALLCLASS 1 
+
+//$makeidle    range_passtime_begin    "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_PASSTIME_THROW_BEGIN 1 addlayer idle_tf_layer // PLACEHOLDER
+//$makeidle    range_passtime_middle    "fyzure/grenade_pose" 0 fyzure_aimlayer_grenade ACT_MP_PASSTIME_THROW_MIDDLE 1 addlayer idle_tf_layer // PLACEHOLDER
+$makerangeB    range_passtime_end    "fyzure/grenade_throw" 0 0 15 25 ACT_MP_PASSTIME_THROW_END 1
+
 $weightlist armsblendstun {
 	"ValveBiped.Bip01_Pelvis" 1.0
 }

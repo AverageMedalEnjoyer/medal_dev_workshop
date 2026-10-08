@@ -49,7 +49,7 @@
 				"max health additive bonus"
 				{
 					"attribute_class"	"add_maxhealth"
-					"value"	"700"
+					"value"	"300"
 				}
 				"move speed bonus"
 				{
@@ -64,7 +64,7 @@
 				"heal on hit for rapidfire"
 				{
 					"attribute_class"	"add_onhit_addhealth"
-					"value" "15"
+					"value" "10"
 				}
 				"fire rate bonus"
 				{
@@ -80,6 +80,11 @@
 				{
 					"attribute_class" 	"mult_dmg"
 					"value"				"0.50"
+				}
+				"dmg from melee increased"
+				{
+					"attribute_class"	"dmg_from_melee"
+					"value"	"1.40"
 				}
 				"maxammo primary reduced"
 				{
